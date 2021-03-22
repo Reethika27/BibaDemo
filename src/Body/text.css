@@ -9,25 +9,83 @@
     position: absolute;
     top: 85%;
     left: 50%;
-    height:54px;
-    width:305px;
-    background:#eedfce;
     color:black;
-   
     text-align:center;
     transform: translate(-50%, -50%);
   }
   .centered1{
     position: absolute;
-    top: 90%;
+    top: 93%;
     left: 50%;
-    height:54px;
-    width:305px;
-    background:#eedfce;
     color:black;
-   
     text-align:center;
     transform: translate(-50%, -50%);
   }
   
   
+  .imagetext{
+    position: absolute;
+    top: 35%;
+    left: 67%;
+    color:black;
+    transform: translate(-50%, -50%);
+  }
+    
+  .imagetext1{
+    position: absolute;
+    top: 30%;
+    left: 55%;
+    color:black;
+    transform: translate(-50%, -50%);
+  }
+  .imagetext2{
+    position: absolute;
+    top: 30%;
+    left: 45%;
+    color:black;
+    transform: translate(-50%, -50%);
+  }
+  .imagetext3{
+    position: absolute;
+    top: 30%;
+    left: 38%;
+    color:black;
+    transform: translate(-50%, -50%);
+  }
+ 
+  .btn,.btn1 { 
+    cursor: pointer; 
+    border: 1px solid black; 
+    background-color: transparent; 
+    height: 25px; 
+    width: 100px; 
+    color:black; 
+    font-size: 15px;
+    text-align: center;
+    padding: 0;
+
+
+} 
+
+    .bottom-left {
+        position: absolute;
+        top: 200px;
+        left: 50px;
+      }
+      .bottom-left1 {
+        position: absolute;
+        top: 150px;
+        left: 10px;
+      }
+      .bottom-left2 {
+        position: absolute;
+        top: 200px;
+        left:5px;
+      }
+      .bottom-left3 {
+        position: absolute;
+        top: 200px;
+        left:25px;
+      }
+      
+

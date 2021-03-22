@@ -1,5 +1,10 @@
 import React from 'react';
 import { Card, Row, Col,CardImg} from 'reactstrap';
+import everyday from './Images/everyday.jpg';
+import chic from './Images/chic.jpg';
+import occasion from './Images/occasions.jpg';
+import work from './Images/work.jpg';
+import './text.css';
 function Wardrobe()
 {
     return (
@@ -14,20 +19,32 @@ function Wardrobe()
                  <br/>
                 <Row >
                     <Col >
-                       <a href="#"> <CardImg   height="450px"   src="https://storage.sg.content-cdn.io/in-resources/6c57599f-2c43-4c82-806a-e07c3410f5d3/Images/userimages/home-page-banners/1-2-2021/everyday-casuals.jpg"></CardImg></a>
+                       <a href="#"> <CardImg   height="450px"   src={everyday}></CardImg></a>
+                       <div class="imagetext" ><h1 style={{fontSize:"30px"}}>EVERYDAY<br/>CASUALS</h1>
+                   <button class="btn">Shop Now</button>
+                     </div>
                     </Col>
                     <Col>
-                        <a href="#"><CardImg height="450px"  src="https://storage.sg.content-cdn.io/in-resources/6c57599f-2c43-4c82-806a-e07c3410f5d3/Images/userimages/home-page-banners/1-2-2021/chic.jpg"></CardImg></a>
+                        <a href="#"><CardImg height="450px"  src= {chic}></CardImg></a>
+                        <div class="imagetext" ><h1 style={{fontSize:"30px"}}>THE CHIC LOOK</h1>
+                   <button class="btn">Shop Now</button>
+                     </div>
                     </Col>
                     
                 </Row>
                 <br/>
                 <Row >
                     <Col >
-                       <a href="#"> <CardImg  height="450px"   src="https://storage.sg.content-cdn.io/in-resources/6c57599f-2c43-4c82-806a-e07c3410f5d3/Images/userimages/home-page-banners/1-2-2021/occasion.jpg"></CardImg></a>
+                       <a href="#"> <CardImg  height="450px"   src={occasion}></CardImg></a>
+                       <div class="imagetext" ><h1 style={{fontSize:"30px"}}>OCCASIONAL WEAR</h1>
+                   <button class="btn">Shop Now</button>
+                     </div>
                     </Col>
                     <Col>
-                        <a href="#"><CardImg height="450px"  src="https://storage.sg.content-cdn.io/in-resources/6c57599f-2c43-4c82-806a-e07c3410f5d3/Images/userimages/home-page-banners/1-3-21/work.jpg"></CardImg></a>
+                        <a href="#"><CardImg height="450px"  src={work}></CardImg></a>
+                        <div class="imagetext" ><h1 style={{fontSize:"30px"}}>WORK WEAR</h1>
+                   <button class="btn">Shop Now</button>
+                     </div>
                     </Col>
                 </Row>
                     

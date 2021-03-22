@@ -1,0 +1,33 @@
+.container {
+    position: relative;
+    text-align: center;
+    color:black;
+  }
+
+  
+  .centered {
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    height:54px;
+    width:305px;
+    background:#eedfce;
+    color:black;
+   
+    text-align:center;
+    transform: translate(-50%, -50%);
+  }
+  .centered1{
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    height:54px;
+    width:305px;
+    background:#eedfce;
+    color:black;
+   
+    text-align:center;
+    transform: translate(-50%, -50%);
+  }
+  
+  

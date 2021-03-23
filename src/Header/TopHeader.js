@@ -9,10 +9,13 @@ function TopHeader()
        width:"20px",
        height:"20px"
      };
+     const style1 ={
+         overflow: "hidden"
+       };
         return(
-            
-            <div>
-            <nav class="navbar fixed-top navbar-expand-sm bg-white">
+        
+            <div style={style1}>
+            <nav class="navbar fixed-top navbar-expand-sm bg-white" >
             <ul class="navbar-nav">
              <li class="nav-item">
               <a class="nav-link" disabled href="#" style={{color:"grey",fontSize:"12px"}}><IoStorefront style={style}/>OFFICE STORE</a>
@@ -49,6 +52,7 @@ function TopHeader()
            </nav>
            
            </div>
+        
         );
         
 }

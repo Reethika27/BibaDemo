@@ -19,7 +19,7 @@ function Register()
                   <input type="text" placeholder="what are you looking for?" style={{width:"400px"}}  />
                   <BiSearch style={{width:"30px",height:"40px"}}/> 
                </li>
-               <li  class="nav-item" style={{paddingLeft:"350px"}}> 
+               <li  class="nav-item" style={{paddingLeft:"300px"}}> 
                <button class="but-hov" style={style} type="submit">Login</button>
                </li>
                <li class="nav-item" style={{paddingLeft:"10px"}}>

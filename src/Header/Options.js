@@ -1,64 +1,137 @@
-import React from 'react'
-import './Options.css';
-function Header()
-{  
-    const style = {
-        fontWeight:"Bold",
-        fontStyle:"sans-serif" ,
-        color:"black",
-        display: "block",
-        align:"center",
-        fontWeight:"12px"
-      };
+import React, { useState, useEffect } from 'react';
+import './Navbar.css';
+
+import DisplayCard from './DisplayCard';
+
+import { Badge } from 'react-bootstrap';
+
+const navLinks = [
+    {
+        text:"NEW ARRIVAL",
+        link:"#Sarees",
+        badgeRequired:false
+    },
+    {
+        text:"SUIT SETS",
+        link:"#Lehengas",
+        badgeRequired:false
+    },
+    {
+        text:"MIX AND MATCH",
+        link:"#SalwarKamees",
+        badgeRequired:false
+    }, 
+    {
+        text:"GIRLS",
+        link:"#Kurtis",
+        badgeRequired:false
+    }, 
+    {
+        text:"BIBA BY ANJU MODI",
+        link:"#Jewellery",
+        badgeRequired:false
+    }, 
+    {
+        text:"SLEEPWEAR",
+        link:"#Kids",
+        badgeRequired:false
+    }, 
+    {
+        text:"EASY STITCH",
+        link:"#Mens",
+        badgeRequired:false
+    },
+    {
+        text:"FOOTWEAR ",
+        link:"#Luxe",
+        badgeRequired:false
+    },
+    {
+        text:"BOOTOM WEAR",
+        link:"#Collections",
+        badgeRequired:false
+    },
+    {
+      text:"JEWELLERY",
+      link:"#Home&Living",
+      badgeRequired:false
+    },
+    {
+      text:"FACTORY OUTLET",
+      link:"#Home&Living",
+      badgeRequired:false
+    },
+    {
+      text:"SHOP BY OCCASION",
+      link:"#Home&Living",
+      badgeRequired:false
+    },
+    {
+      text:"BLOG",
+      link:"#Home&Living",
+      badgeRequired:false
+    }
+]
+
+    const checkTab = (str) => {
+        let tabs = ["Sarees","Lehengas","Salwar Kamees","Kurtis","Jewellery","Kids","Mens","Home & Living","Luxe ","Collections"]
+        if(tabs.includes(str)){
+            return true;
+        }
+        return false;
+    }
+
+  
+function Navbar() {
+    const [showDisplay, setShowDisplay] = useState(false);
+    const [displayTab, setDisplayTab] = useState([]);
+
+    useEffect(() => {
+        if(showDisplay){
+            const hoverSection = document.getElementById("hover");
+            hoverSection.classList.remove("hover-section-remove");
+            hoverSection.classList.add("hover-section-show");
+        }
+        else{
+            const hoverSection = document.getElementById("hover");
+            hoverSection.classList.remove("hover-section-show");
+            hoverSection.classList.add("hover-section-remove")
+        }
+    },[showDisplay, displayTab])
+
+    return(
+        <div className="nav">
+            <div className="navbar">
+                { 
+                    navLinks.map( 
+                        (navLink,idx) => <a 
+                        onMouseEnter={e => {
+                            setShowDisplay(true);
+                            let selectedTab = e._targetInst.memoizedProps.children[0];
+                          
+                            }} 
+                        onMouseLeave={() => {
+                            setShowDisplay(false);
+                        }} className="anchors" key={idx} href={navLink.link}>
+                            { navLink.text }
+                            { 
+                                navLink.badgeRequired &&
+                                <Badge variant="danger">{ navLink.badgeText }</Badge> 
+                            }
+                            </a>) 
+                }
+                 
+            </div> 
+            <div id="hover" style={{postion:"absolute"}}
+                onMouseEnter={() => setShowDisplay(true)} 
+                onMouseLeave={() => setShowDisplay(false)} 
+                className="hover-section-remove"
+            >
+                <DisplayCard cardDetails={displayTab}/>
+            </div> 
+        </div>
     
-        return(
-           <div>
-              <nav class="navbar navbar-expand-sm bg-white">
-                <ul class="navbar-nav">
-                      <li class="nav-item" >
-                        <a class="nav-link" disabled href="#" style={style}>NEW ARRIVALS</a>
-                      </li>
-                      <li class="nav-item" >
-                        <a class="nav-link" disabled href="#" style={style}>SUIT SETS</a>
-                      </li>
-                      <li class="nav-item" >
-                        <a class="nav-link" disabled href="#" style={style}>MIX AND MATCH</a>
-                      </li>
-                      <li class="nav-item" >
-                        <a class="nav-link" disabled href="#" style={style}>GIRLS</a>
-                      </li>
-                      <li class="nav-item" >
-                        <a class="nav-link" disabled href="#" style={style}>BIBA BY ANUJ MODI</a>
-                      </li>
-                      <li class="nav-item" >
-                        <a class="nav-link" disabled href="#" style={style}>SLEEPWEAR</a>
-                      </li>
-                      <li class="nav-item" >
-                        <a class="nav-link" disabled href="#" style={style}>EASY STITCH</a>
-                      </li>
-                      <li class="nav-item" >
-                        <a class="nav-link" disabled href="#" style={style}>FOOTWEAR</a>
-                      </li>
-                      <li class="nav-item" >
-                        <a class="nav-link" disabled href="#" style={style}>BOTTOMWEAR</a>
-                      </li>
-                      <li class="nav-item" >
-                        <a class="nav-link" disabled href="#" style={style}>JEWELLERY</a>
-                      </li>
-                      <li class="nav-item" >
-                        <a class="nav-link" disabled href="#" style={style}>FACTORY OUTLET</a>
-                      </li>
-                      <li class="nav-item" >
-                        <a class="nav-link" disabled href="#" style={style}>SHOP BY OCCASION</a>
-                      </li>
-                      <li class="nav-item" >
-                        <a class="nav-link" disabled href="#" style={style}>BLOG</a>
-                      </li>
-                </ul>
-              </nav>
-           </div>
-        );
-    
+    );
 }
 
-export default Header;
+export default Navbar;

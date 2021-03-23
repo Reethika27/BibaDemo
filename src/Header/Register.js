@@ -7,8 +7,9 @@ function Register()
         backgroundColor:"rgb(150, 10, 17)"
      };
         return( 
-        <div>
-           <br/><br/><br/>
+         
+          <div>
+           <br/><br/>
          <nav class="navbar fixed navbar-expand-sm bg-white">
          <ul class="navbar-nav">
                <li class="nav-item" >
@@ -32,6 +33,7 @@ function Register()
          </nav>
          
          </div>
+      
         );
     
 }
